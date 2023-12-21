@@ -116,55 +116,6 @@ END;
 $$ LANGUAGE plpgsql;
 
 
-CREATE OR REPLACE FUNCTION fill_all_table()
-RETURNS void
-AS $$
-BEGIN
-INSERT INTO author(name_author)
-VALUES ('Булгаков М.А.'),
-('Достоевский Ф.М.'),
-('Есенин С.А.'),
-('Пастернак Б.Л.'),
-('Лермонтов М.Ю.');
-
-INSERT INTO book (title, author_id, price, amount)
-VALUES ('Мастер и Маргарита', (select author_id from author where name_author = 'Булгаков М.А.'), 670.99, 3),
-('Белая гвардия', (select author_id from author where name_author = 'Булгаков М.А.'), 540.50, 5),
-('Идиот', (select author_id from author where name_author = 'Достоевский Ф.М.'), 460.00, 10),
-('Братья Карамазовы', (select author_id from author where name_author = 'Достоевский Ф.М.'), 799.01, 2),
-('Игрок', (select author_id from author where name_author = 'Достоевский Ф.М.'), 480.50, 10),
-('Стихотворения и поэмы', (select author_id from author where name_author = 'Есенин С.А.'), 650.00, 15),
-('Черный человек', (select author_id from author where name_author = 'Есенин С.А.'), 570.20, 6),
-('Лирика', (select author_id from author where name_author = 'Пастернак Б.Л.'), 518.99, 2);
-
-INSERT INTO city(name_city, days_delivery)
- VALUES ('Москва', 5),
-('Санкт-Петербург', 3),
-('Владивосток', 12),
-('Нижний Новгород', 1),
-('Казань', 3),
-('Омск', 8),
-('Екатеринбург', 7),
-('Самара', 5),
-('Новосибирск', 10),
-('Красноярск', 6),
-('Челябинск', 4);
-
-INSERT INTO client(name_client, city_id, email, client_password)
-VALUES ('Баранов Павел', (select city_id from city where name_city = 'Владивосток'), 'baranov@test', '123'),
-('Абрамова Катя', (select city_id from city where name_city = 'Москва'), 'abramova@test', '456'),
-('Семенонов Иван', (select city_id from city where name_city = 'Санкт-Петербург'), 'semenov@test', '789'),
-('Яковлева Галина', (select city_id from city where name_city = 'Москва'), 'yakovleva@test', 'abc');
-
-INSERT INTO buy_book(client_id, book_id)
-VALUES
-((select client_id from client where name_client = 'Баранов Павел'), (select book_id from book where title = 'Мастер и Маргарита')),
-((select client_id from client where name_client = 'Баранов Павел'), (select book_id from book where title = 'Белая гвардия')),
-((select client_id from client where name_client = 'Абрамова Катя'), (select book_id from book where title = 'Идиот')),
-((select client_id from client where name_client = 'Семенонов Иван'), (select book_id from book where title = 'Мастер и Маргарита'));
-END;
-$$ LANGUAGE plpgsql;
-
 
 CREATE OR REPLACE FUNCTION delete_user(user_id int)
 RETURNS void
@@ -242,7 +193,7 @@ END;
 $$ LANGUAGE plpgsql;
 
 
-CREATE TRIGGER update_book_amount_trigger
+CREATE OR REPLACE TRIGGER update_book_amount_trigger
 AFTER INSERT OR DELETE ON buy_book
 FOR EACH ROW
 EXECUTE FUNCTION update_book_amount();
@@ -253,5 +204,48 @@ RETURNS void
 AS $$
 BEGIN
 DELETE FROM buy_book WHERE  client_id = user_id;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE OR REPLACE FUNCTION fill_all_table()
+RETURNS void
+AS $$
+BEGIN
+INSERT INTO author(name_author)
+VALUES ('Булгаков М.А.'),
+('Достоевский Ф.М.'),
+('Есенин С.А.'),
+('Пастернак Б.Л.'),
+('Лермонтов М.Ю.');
+
+INSERT INTO book (title, author_id, price, amount)
+VALUES ('Мастер и Маргарита', (select author_id from author where name_author = 'Булгаков М.А.'), 670.99, 3),
+('Белая гвардия', (select author_id from author where name_author = 'Булгаков М.А.'), 540.50, 5),
+('Идиот', (select author_id from author where name_author = 'Достоевский Ф.М.'), 460.00, 10),
+('Братья Карамазовы', (select author_id from author where name_author = 'Достоевский Ф.М.'), 799.01, 2),
+('Игрок', (select author_id from author where name_author = 'Достоевский Ф.М.'), 480.50, 10),
+('Стихотворения и поэмы', (select author_id from author where name_author = 'Есенин С.А.'), 650.00, 15),
+('Черный человек', (select author_id from author where name_author = 'Есенин С.А.'), 570.20, 6),
+('Лирика', (select author_id from author where name_author = 'Пастернак Б.Л.'), 518.99, 2);
+
+INSERT INTO city(name_city, days_delivery)
+ VALUES ('Москва', 5),
+('Санкт-Петербург', 3),
+('Владивосток', 12),
+('Нижний Новгород', 1),
+('Казань', 3),
+('Омск', 8),
+('Екатеринбург', 7),
+('Самара', 5),
+('Новосибирск', 10),
+('Красноярск', 6),
+('Челябинск', 4);
+
+INSERT INTO client(name_client, city_id, email, client_password)
+VALUES ('Баранов Павел', (select city_id from city where name_city = 'Владивосток'), 'baranov@test', '123'),
+('Абрамова Катя', (select city_id from city where name_city = 'Москва'), 'abramova@test', '456'),
+('Семенонов Иван', (select city_id from city where name_city = 'Санкт-Петербург'), 'semenov@test', '789'),
+('Яковлева Галина', (select city_id from city where name_city = 'Москва'), 'yakovleva@test', 'abc');
+
 END;
 $$ LANGUAGE plpgsql;

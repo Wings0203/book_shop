@@ -71,12 +71,17 @@ END;
 $$ LANGUAGE plpgsql;
 
 
-CREATE OR REPLACE FUNCTION get_completed_orders(user_id INT)
-RETURNS TABLE(title VARCHAR, name_author VARCHAR, name_city VARCHAR, days_delivery INT, price DECIMAL)
+CREATE OR REPLACE FUNCTION get_completed_order(user_id INT)
+RETURNS TABLE(buy_book_id INT, 
+        title VARCHAR, 
+        name_author VARCHAR, 
+        name_city VARCHAR, 
+        days_delivery INT, 
+        price DECIMAL)
 AS $$
 BEGIN
 RETURN QUERY
-SELECT b.title, a.name_author, city.name_city, city.days_delivery, b.price
+SELECT buy_book.buy_book_id, b.title, a.name_author, city.name_city, city.days_delivery, b.price
 FROM book b
 JOIN buy_book ON b.book_id = buy_book.book_id
 JOIN author a ON b.author_id = a.author_id
@@ -99,7 +104,5 @@ VALUES
 (user_id, book_id);
 END;
 $$ LANGUAGE plpgsql;
-
-select * from add_buy_book(4, 7)
 
 

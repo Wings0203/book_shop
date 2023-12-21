@@ -1,4 +1,4 @@
-CREATE EXTENSION dblink;
+CREATE EXTENSION IF NOT EXISTS dblink;
 
 CREATE OR REPLACE FUNCTION f_create_db(dbname text)
   RETURNS void AS
@@ -111,12 +111,11 @@ FOREIGN KEY (book_id) REFERENCES book (book_id) ON DELETE CASCADE
 );
 INSERT INTO buy_book(client_id, book_id)
 VALUES
-(1, 1),
-(1, 2),
-(2, 3),
-(3, 1);
+(2, 1),
+(2, 2),
+(3, 3),
+(4, 1);
 END IF;
 RETURN 0;
 END;
 $$ LANGUAGE plpgsql;
-
