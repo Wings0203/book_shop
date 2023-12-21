@@ -1,0 +1,655 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QFrame" name="frame">
+      <property name="styleSheet">
+       <string notr="true">background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:0, y2:0, stop:0 rgba(81, 0, 135, 255), stop:0.427447 rgba(41, 61, 132, 235), stop:1 rgba(155, 79, 165, 255));
+</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_2" stretch="1,8">
+       <item>
+        <widget class="QFrame" name="frame_2">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>42</height>
+          </size>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <widget class="QPushButton" name="pushButton_menu">
+          <property name="geometry">
+           <rect>
+            <x>40</x>
+            <y>10</y>
+            <width>141</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>МЕНЮ</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_4">
+          <property name="geometry">
+           <rect>
+            <x>350</x>
+            <y>10</y>
+            <width>291</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>15</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(170, 170, 255);</string>
+          </property>
+          <property name="text">
+           <string>АККАУНТ АДМИНИСТРАТОРА</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="frame_3">
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="QFrame" name="frame_4">
+            <property name="minimumSize">
+             <size>
+              <width>200</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>0</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QFrame{
+background-color: rgb(170, 170, 255)
+}
+QPushButton{
+background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:0, y2:0, stop:0 rgba(81, 0, 135, 255), stop:0.427447 rgba(41, 61, 132, 235), stop:1 rgba(155, 79, 165, 255));
+}
+QPushButton:hover{
+background-color:white;
+}</string>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <widget class="QPushButton" name="pushButton_spisok">
+             <property name="geometry">
+              <rect>
+               <x>30</x>
+               <y>80</y>
+               <width>141</width>
+               <height>41</height>
+              </rect>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>40</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>10</pointsize>
+              </font>
+             </property>
+             <property name="text">
+              <string>Таблица</string>
+             </property>
+            </widget>
+            <widget class="QPushButton" name="pushButton_korzina">
+             <property name="geometry">
+              <rect>
+               <x>30</x>
+               <y>160</y>
+               <width>141</width>
+               <height>41</height>
+              </rect>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>40</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>10</pointsize>
+              </font>
+             </property>
+             <property name="text">
+              <string>Удалить строку</string>
+             </property>
+            </widget>
+            <widget class="QPushButton" name="pushButton_zakazi">
+             <property name="geometry">
+              <rect>
+               <x>30</x>
+               <y>240</y>
+               <width>141</width>
+               <height>41</height>
+              </rect>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>40</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>10</pointsize>
+              </font>
+             </property>
+             <property name="text">
+              <string>Добавление данных</string>
+             </property>
+            </widget>
+            <widget class="QPushButton" name="pushButton_2">
+             <property name="geometry">
+              <rect>
+               <x>30</x>
+               <y>320</y>
+               <width>141</width>
+               <height>41</height>
+              </rect>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>10</pointsize>
+              </font>
+             </property>
+             <property name="text">
+              <string>Удалить базу данных</string>
+             </property>
+            </widget>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="frame_5">
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_3">
+             <property name="spacing">
+              <number>0</number>
+             </property>
+             <property name="leftMargin">
+              <number>1</number>
+             </property>
+             <property name="topMargin">
+              <number>1</number>
+             </property>
+             <property name="rightMargin">
+              <number>1</number>
+             </property>
+             <property name="bottomMargin">
+              <number>1</number>
+             </property>
+             <item>
+              <widget class="QStackedWidget" name="stackedWidget">
+               <property name="font">
+                <font>
+                 <pointsize>12</pointsize>
+                </font>
+               </property>
+               <property name="currentIndex">
+                <number>0</number>
+               </property>
+               <widget class="QWidget" name="page_table">
+                <widget class="QTableWidget" name="tableWidget">
+                 <property name="geometry">
+                  <rect>
+                   <x>20</x>
+                   <y>80</y>
+                   <width>501</width>
+                   <height>341</height>
+                  </rect>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:0, y2:0, stop:0 rgba(81, 0, 135, 255), stop:0.427447 rgba(41, 61, 132, 235), stop:1 rgba(155, 79, 165, 255));
+</string>
+                 </property>
+                </widget>
+                <widget class="QLabel" name="label">
+                 <property name="geometry">
+                  <rect>
+                   <x>20</x>
+                   <y>20</y>
+                   <width>141</width>
+                   <height>41</height>
+                  </rect>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <italic>false</italic>
+                   <bold>false</bold>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>Таблица</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+                <widget class="QPushButton" name="pushButton_obnovi">
+                 <property name="geometry">
+                  <rect>
+                   <x>410</x>
+                   <y>440</y>
+                   <width>111</width>
+                   <height>31</height>
+                  </rect>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <bold>true</bold>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>ОБНОВИТЬ</string>
+                 </property>
+                </widget>
+                <widget class="QComboBox" name="comboBox">
+                 <property name="geometry">
+                  <rect>
+                   <x>190</x>
+                   <y>20</y>
+                   <width>241</width>
+                   <height>41</height>
+                  </rect>
+                 </property>
+                 <property name="contextMenuPolicy">
+                  <enum>Qt::NoContextMenu</enum>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgb(255, 255, 255);</string>
+                 </property>
+                 <property name="currentIndex">
+                  <number>-1</number>
+                 </property>
+                 <property name="placeholderText">
+                  <string>Выберите таблицу</string>
+                 </property>
+                 <item>
+                  <property name="text">
+                   <string>book</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>author</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>city</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>client</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>book_buy</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>все таблицы</string>
+                  </property>
+                 </item>
+                </widget>
+                <widget class="QPushButton" name="pushButton">
+                 <property name="geometry">
+                  <rect>
+                   <x>50</x>
+                   <y>440</y>
+                   <width>111</width>
+                   <height>31</height>
+                  </rect>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <bold>true</bold>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>УДАЛИТЬ</string>
+                 </property>
+                </widget>
+               </widget>
+               <widget class="QWidget" name="page_delete">
+                <widget class="QLabel" name="label_2">
+                 <property name="geometry">
+                  <rect>
+                   <x>20</x>
+                   <y>70</y>
+                   <width>171</width>
+                   <height>31</height>
+                  </rect>
+                 </property>
+                 <property name="text">
+                  <string>ВВЕДИТЕ НАЗВАНИЕ:</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+                <widget class="QLineEdit" name="lineEdit">
+                 <property name="geometry">
+                  <rect>
+                   <x>200</x>
+                   <y>70</y>
+                   <width>221</width>
+                   <height>31</height>
+                  </rect>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgb(255, 255, 255);</string>
+                 </property>
+                </widget>
+                <widget class="QPushButton" name="pushButton_poisc">
+                 <property name="geometry">
+                  <rect>
+                   <x>430</x>
+                   <y>70</y>
+                   <width>91</width>
+                   <height>31</height>
+                  </rect>
+                 </property>
+                 <property name="text">
+                  <string>ПОИСК</string>
+                 </property>
+                </widget>
+                <widget class="QPushButton" name="pushButton_ophorm_zakaz">
+                 <property name="geometry">
+                  <rect>
+                   <x>390</x>
+                   <y>390</y>
+                   <width>131</width>
+                   <height>51</height>
+                  </rect>
+                 </property>
+                 <property name="text">
+                  <string>Удалить строчку</string>
+                 </property>
+                </widget>
+                <widget class="QTableWidget" name="tableWidget_2">
+                 <property name="geometry">
+                  <rect>
+                   <x>20</x>
+                   <y>120</y>
+                   <width>501</width>
+                   <height>231</height>
+                  </rect>
+                 </property>
+                </widget>
+                <widget class="QLabel" name="label_5">
+                 <property name="geometry">
+                  <rect>
+                   <x>170</x>
+                   <y>10</y>
+                   <width>211</width>
+                   <height>31</height>
+                  </rect>
+                 </property>
+                 <property name="text">
+                  <string>УДАЛИТЬ СТРОКУ</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </widget>
+               <widget class="QWidget" name="page_add">
+                <widget class="QPushButton" name="pushButton_4">
+                 <property name="geometry">
+                  <rect>
+                   <x>140</x>
+                   <y>20</y>
+                   <width>241</width>
+                   <height>41</height>
+                  </rect>
+                 </property>
+                 <property name="text">
+                  <string>ДОБАВЛЕНИЕ НОВЫХ ДАННЫХ</string>
+                 </property>
+                </widget>
+                <widget class="QFrame" name="frame_6">
+                 <property name="geometry">
+                  <rect>
+                   <x>70</x>
+                   <y>100</y>
+                   <width>401</width>
+                   <height>281</height>
+                  </rect>
+                 </property>
+                 <property name="frameShape">
+                  <enum>QFrame::StyledPanel</enum>
+                 </property>
+                 <property name="frameShadow">
+                  <enum>QFrame::Raised</enum>
+                 </property>
+                 <widget class="QLineEdit" name="lineEdit_2">
+                  <property name="geometry">
+                   <rect>
+                    <x>180</x>
+                    <y>40</y>
+                    <width>181</width>
+                    <height>31</height>
+                   </rect>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">background-color:white;</string>
+                  </property>
+                 </widget>
+                 <widget class="QLineEdit" name="lineEdit_3">
+                  <property name="geometry">
+                   <rect>
+                    <x>180</x>
+                    <y>90</y>
+                    <width>181</width>
+                    <height>31</height>
+                   </rect>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">background-color:white;</string>
+                  </property>
+                 </widget>
+                 <widget class="QLineEdit" name="lineEdit_4">
+                  <property name="geometry">
+                   <rect>
+                    <x>180</x>
+                    <y>140</y>
+                    <width>181</width>
+                    <height>31</height>
+                   </rect>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">background-color:white;</string>
+                  </property>
+                 </widget>
+                 <widget class="QLineEdit" name="lineEdit_5">
+                  <property name="geometry">
+                   <rect>
+                    <x>180</x>
+                    <y>190</y>
+                    <width>181</width>
+                    <height>31</height>
+                   </rect>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">background-color:white;</string>
+                  </property>
+                 </widget>
+                 <widget class="QLabel" name="label_3">
+                  <property name="geometry">
+                   <rect>
+                    <x>40</x>
+                    <y>40</y>
+                    <width>121</width>
+                    <height>31</height>
+                   </rect>
+                  </property>
+                  <property name="text">
+                   <string>name_author</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                 <widget class="QLabel" name="label_8">
+                  <property name="geometry">
+                   <rect>
+                    <x>40</x>
+                    <y>140</y>
+                    <width>121</width>
+                    <height>31</height>
+                   </rect>
+                  </property>
+                  <property name="text">
+                   <string>price</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                 <widget class="QLabel" name="label_9">
+                  <property name="geometry">
+                   <rect>
+                    <x>40</x>
+                    <y>90</y>
+                    <width>121</width>
+                    <height>31</height>
+                   </rect>
+                  </property>
+                  <property name="text">
+                   <string>title</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                 <widget class="QLabel" name="label_10">
+                  <property name="geometry">
+                   <rect>
+                    <x>40</x>
+                    <y>190</y>
+                    <width>121</width>
+                    <height>31</height>
+                   </rect>
+                  </property>
+                  <property name="text">
+                   <string>amount</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </widget>
+                <widget class="QPushButton" name="pushButton_add_book">
+                 <property name="geometry">
+                  <rect>
+                   <x>340</x>
+                   <y>400</y>
+                   <width>131</width>
+                   <height>51</height>
+                  </rect>
+                 </property>
+                 <property name="text">
+                  <string>Добавить книгу</string>
+                 </property>
+                </widget>
+               </widget>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
